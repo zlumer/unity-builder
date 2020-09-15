@@ -12,7 +12,7 @@ async function action() {
   const baseImage = {
     version: buildParameters.version,
     platform: buildParameters.platform,
-    toString: () => `gableroux/unity3d@sha256:02c9488c23edcd3453a731ac9ef0ce53226daeab80870a54f5163192742b8e7c`,
+    toString: () => `gableroux/unity3d@sha256:8dd3b2433c0cca9f911df431b8fe39926d26ba5aeece5c2d5b2157b0d31a7e18`,
   }
   if (buildParameters.kubeConfig) {
     core.info('Building with Kubernetes');
