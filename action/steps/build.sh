@@ -19,6 +19,10 @@ echo "Using build name \"$BUILD_NAME\"."
 
 echo "Using build target \"$BUILD_TARGET\"."
 
+
+echo "======================================="
+echo "User: $USER"
+echo "======================================="
 #
 # Display build path and file
 #
