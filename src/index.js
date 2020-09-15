@@ -3,16 +3,16 @@ import { Action, BuildParameters, Cache, Docker, ImageTag, Kubernetes, Output } 
 const core = require('@actions/core');
 
 async function action() {
+  throw new Error(`TEST ERROR!`)
   Action.checkCompatibility();
   Cache.verify();
 
   const { dockerfile, workspace, actionFolder } = Action;
 
   const buildParameters = await BuildParameters.create();
-  const baseImage = new ImageTag(buildParameters);
   if (buildParameters.kubeConfig) {
     core.info('Building with Kubernetes');
-    await Kubernetes.runBuildJob(buildParameters, baseImage);
+    await Kubernetes.runBuildJob(buildParameters, new ImageTag(buildParameters));
   } else {
     // Build docker image
     // TODO: No image required (instead use a version published to dockerhub for the action, supply credentials for github cloning)
@@ -25,7 +25,6 @@ async function action() {
     });
     await Docker.run(builtImage, { workspace, ...buildParameters });
   }
-
   // Set output
   await Output.setBuildVersion(buildParameters.buildVersion);
 }
