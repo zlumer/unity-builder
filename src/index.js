@@ -19,7 +19,7 @@ async function action() {
     const builtImage = await Docker.build({
       path: actionFolder,
       dockerfile,
-      baseImage,
+      baseImage: `gableroux/unity3d@sha256:02c9488c23edcd3453a731ac9ef0ce53226daeab80870a54f5163192742b8e7c`,
       uid: buildParameters.uid,
       gid: buildParameters.gid,
     });
