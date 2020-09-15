@@ -3,7 +3,6 @@ import { Action, BuildParameters, Cache, Docker, ImageTag, Kubernetes, Output } 
 const core = require('@actions/core');
 
 async function action() {
-  throw new Error(`TEST ERROR!`)
   Action.checkCompatibility();
   Cache.verify();
 
