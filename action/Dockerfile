@@ -1,5 +1,5 @@
 ARG IMAGE
-FROM gableroux/unity3d:2019.2.21f1-android
+FROM gableroux/unity3d:2019.2.21f1-android-70-use-ndk-r16b-for-all-images-before-2019-3-0
 
 ARG UNAME=runner
 ARG UID=1000
