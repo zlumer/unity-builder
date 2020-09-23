@@ -20,6 +20,9 @@ RUN echo "uid: $UID, gid: $GID"
 RUN getent group $GID || groupadd -g $GID $UNAME
 RUN id -u $UID &>/dev/null || useradd -m -u $UID -g $GID -s /bin/bash -d /github/home $UNAME
 
+RUN ls -Rla /opt/Unity/Editor/Data/PlaybackEngines/AndroidPlayer
+# RUN chmod -R +x /opt/Unity/Editor/Data/PlaybackEngines/AndroidPlayer
+
 ADD default-build-script /UnityBuilderAction
 ADD steps /steps
 RUN chmod -R +x /steps
