@@ -23,6 +23,8 @@ RUN id -u $UID &>/dev/null || useradd -m -u $UID -g $GID -s /bin/bash -d /github
 # RUN ls -Rla /opt/Unity/Editor/Data/PlaybackEngines/AndroidPlayer
 # RUN chmod -R +x /opt/Unity/Editor/Data/PlaybackEngines/AndroidPlayer
 
+RUN apt install lib32stdc++6 -y
+
 ADD default-build-script /UnityBuilderAction
 ADD steps /steps
 RUN chmod -R +x /steps
