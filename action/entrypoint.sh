@@ -2,6 +2,9 @@
 
 apt install lib32stdc++6 -y
 
+echo "ACTION_DEBUG: install lib32stdc++6"
+echo "apt install lib32stdc++6 -y"
+
 #
 # Run steps
 #
