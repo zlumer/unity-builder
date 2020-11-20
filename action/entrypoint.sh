@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+apt install lib32stdc++6 -y
+
 #
 # Run steps
 #
